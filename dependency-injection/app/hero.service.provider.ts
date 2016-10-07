@@ -3,7 +3,8 @@ import { Logger } from './logger.service';
 import { UserService } from './user.service';
 
 let heroServiceFactory = (logger: Logger, userService: UserService) => {
-  return new HeroService(logger, userService.user.isAuthorized);
+  //传入null作为logger检测optinal是否生效
+  return new HeroService(null, userService.user.isAuthorized);
 };
 
 export let heroServiceProvider =
